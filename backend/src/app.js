@@ -13,8 +13,8 @@ app.use(cors({
 }));
 
 
-app.get('/working-backend', (req, res) => {
-    res.send('ssi backend is working')
+app.get('/api/working', (req, res) => {
+    res.status(200).send('ssi backend is working');
 })
 
 
