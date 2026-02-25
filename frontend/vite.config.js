@@ -9,6 +9,8 @@ export default defineConfig({
     tailwindcss(),
   ],
 
+  base: "./",
+
   server: {
     host: true, // allows external access
     allowedHosts: [
