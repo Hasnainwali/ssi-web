@@ -8,12 +8,12 @@ app.use(express.json());
 env.config();
 
 app.use(cors({
-    origin: 'http://localhost:5173',
+    origin: process.env.FRONTEND_URL,
     credentials: true,
 }));
 
 
-app.get('/api/working', (req, res) => {
+app.get('/api/testing', (req, res) => {
     res.status(200).send('ssi backend is working');
 })
 
