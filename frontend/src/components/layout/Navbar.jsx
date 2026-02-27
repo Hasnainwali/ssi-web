@@ -60,8 +60,8 @@ const Navbar = ({ toggleEnrollModal }) => {
 
 
             {/* Desktop Menu (Hidden on mobile) */}
-            <div className="hidden md:block animate-fade-in mr-12">
-              <div className="ml-10 flex items-baseline sm:space-x-2 md:space-x-4">
+            <div className="hidden md:block animate-fade-in mr-12 ">
+              <div className="ml-10 flex items-baseline sm:space-x-2 md:space-x-2 p-1 rounded-lg bg-blue-500/10">
                 {navLinks.map((item) => (
                   <Link
                     key={item.name}

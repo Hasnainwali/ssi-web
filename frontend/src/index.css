@@ -138,7 +138,7 @@
         @apply bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white px-4 py-2 rounded-xl text-lg transition-all duration-300 flex items-center;
     }
 
-    
+
 
     .contact-input {
         @apply w-full bg-[#020617]/50 border border-slate-700 rounded-full py-3 pl-5 pr-28 text-sm text-white placeholder:text-slate-500 focus:outline-none focus:border-blue-500 transition-all duration-300;
@@ -249,15 +249,18 @@
         animation: slide-in-left 1.2s ease-out 0.5s forwards;
     }
 
-    @keyframes border-spin {
-        to {
+    @keyframes borderRotate {
+        0% {
+            transform: rotate(0deg);
+        }
+
+        100% {
             transform: rotate(360deg);
         }
     }
 
-    .animate-border-spin {
-        animation: border-spin 6s linear infinite;
-        will-change: transform;
+    .glow-border {
+        animation: borderRotate 6s linear infinite;
     }
 
     @keyframes loading-bar {

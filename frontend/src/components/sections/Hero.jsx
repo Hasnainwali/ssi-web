@@ -4,7 +4,7 @@ import { ArrowRight, Play } from 'lucide-react';
 import useReveal from '../../hooks/useReveal.js'
 import FloatingCard from '../common/FloatingCard.jsx';
 import FloatingCardLeft from '../common/FloatingCardLeft.jsx';
-import Galaxy from '../../animations/Galaxy.jsx';
+// import Galaxy from '../../animations/Galaxy.jsx';
 
 
 const Hero = ({ toggleEnrollModal }) => {
@@ -14,6 +14,7 @@ const Hero = ({ toggleEnrollModal }) => {
   useReveal(".fade-up");
   useReveal(".slide-up", { y: 80, duration: 1 });
   useReveal(".slide-left", { x: -100, y: 0 });
+  useReveal(".fade-in", { opacity: 0, opacity: 1 });
 
 
   const [textIndex, setTextIndex] = useState(0);

@@ -1,8 +1,5 @@
 import react, { useState, useEffect, useRef } from 'react'
-import {
-  Code, Monitor, PenTool, Box, Terminal, Menu, X, ChevronRight,
-  Star, Users, Clock,
-} from 'lucide-react';
+import { ChevronRight, Star, Users, Clock, } from 'lucide-react';
 
 import SecHeading from '../components/common/SecHeading';
 import { Navigate, useNavigate } from 'react-router-dom';
@@ -32,10 +29,17 @@ const CoursesPage = () => {
 
 
   const fetchCourses = async () => {
-    const res = await api.get('/api/getcourses');
-    console.log(res.data);
-    setCourses(res.data.AllCourses);
+    try {
+      const res = await api.get('/api/getcourses');
+      console.log(res.data);
+      setCourses(res.data.AllCourses);
+    }
+    catch (error) {
+      console.log(error.message);
+    }
   }
+
+
 
   useEffect(() => {
     fetchCourses()
@@ -72,9 +76,11 @@ const CoursesPage = () => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative perspective-[1000px]">
           {filteredCourses.map((course) => (
-            <div key={course.id} className="bg-[#1E293B]/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-900/20 transition-all hover:-translate-y-4 group slide-left">
+            <div key={course.id} className="bg-[#1E293B]/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-xl shadow-blue-900/20 transition-all slide-left
+            hover:scale-110 cursor-pointer hover:-rotate-y-45"
+              onClick={() => navigate(`/course/${course.id}`)}>
               <div className="flex justify-between items-start mb-6">
                 <img className="bg-slate-800 p-3 rounded-lg border border-slate-700 group-hover:border-blue-500/50 transition-colors size-28 object-cover"
                   src={course.image} />
