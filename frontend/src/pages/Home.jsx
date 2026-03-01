@@ -10,7 +10,7 @@ import Team from '../components/sections/Team'
 import About from '../components/sections/About'
 import CallToAction from '../components/sections/CallToAction'
 import { EnrollmentModal } from '../components/common/EnrollmentModel';
-// import Galaxy from '../animations/Galaxy';
+import {RainBackground} from '../animations/BgAnimations';
 
 
 
@@ -23,15 +23,7 @@ const Home = ({ toggleEnrollModal }) => {
         <>
             <main className="home-bg">
 
-                {/* <div className='absolute inset-0 w-full'>
-                    <Galaxy
-                        mouseRepulsion
-                        mouseInteraction
-                        rotationSpeed={0.1}
-                        starSpeed={0.5}
-                        speed={0.3}
-                    />
-                </div> */}
+                <RainBackground />
 
                 {/* 1. Top Right Glow */}
                 <div className="glow-accent-top" />
