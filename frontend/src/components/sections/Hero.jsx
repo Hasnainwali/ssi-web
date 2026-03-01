@@ -4,6 +4,7 @@ import { ArrowRight, Play } from 'lucide-react';
 import useReveal from '../../hooks/useReveal.js'
 import FloatingCard from '../common/FloatingCard.jsx';
 import FloatingCardLeft from '../common/FloatingCardLeft.jsx';
+import { RoomGridFloor } from '../common/RoomGridFloor.jsx';
 // import Galaxy from '../../animations/Galaxy.jsx';
 
 
@@ -49,23 +50,9 @@ const Hero = ({ toggleEnrollModal }) => {
         />
       </div> */}
 
-      {/* Grid Floor Effect */}
-      <div className="absolute bottom-0 left-0 right-0 h-[600px] pointer-events-none z-0 opacity-40">
-        <div
-          className="w-full h-full absolute inset-0"
-          style={{
-            backgroundImage: `
-              linear-gradient(to right, rgba(25, 64, 175, 0.3) 10px, transparent 1px),
-              linear-gradient(to bottom, rgba(25, 64, 175, 0.3) 10px, transparent 1px)
-            `,
-            backgroundSize: '60px 60px',
-            transform: 'perspective(1000px) rotateX(60deg) translateY(100px) scale(1.5)',
-            transformOrigin: 'bottom center',
-            maskImage: 'linear-gradient(to top, black, transparent 80%)',
-            WebkitMaskImage: 'linear-gradient(to top, black, transparent 80%)'
-          }}
-        />
-      </div>
+
+      {/* 3d grid floor effect */}
+      <RoomGridFloor />
 
 
 
@@ -99,14 +86,50 @@ const Hero = ({ toggleEnrollModal }) => {
         </div>
 
 
-        <div className="text-center text-slate-400 text-lg md:text-xl  max-w-lg leading-relaxed my-2">
-          <div className='max-w-full flex flex-col lg:flex-row gap-4'>
-            <span className='hero-span-tag animate-fade'>Professional IT training</span>
-            <span className='hero-span-tag animate-fade'>industry-expert instructors</span>
-            <span className='hero-span-tag animate-fade'>Joined over 500+ students</span>
+        <div className="flex justify-center my-6">
+          <div className="
+      group relative 
+      px-8 py-6 
+      max-w-xl w-full 
+      text-center 
+      text-slate-300 
+      rounded-2xl 
+      bg-white/5 
+      backdrop-blur-xl 
+      border border-white/10 
+      shadow-[0_0_40px_rgba(0,255,200,0.05)]
+      transition-all duration-500
+      hover:-translate-y-2 
+      hover:shadow-[0_0_60px_rgba(0,255,200,0.15)]
+    ">
+
+            {/* Subtle Gradient Glow on Hover */}
+            <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 
+      bg-gradient-to-r from-emerald-500/10 via-blue-500/10 to-emerald-500/10 blur-xl">
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 flex flex-col md:flex-row justify-center items-center gap-4 text-sm md:text-base font-medium tracking-wide">
+
+              <span className="flex items-center gap-2">
+                🚀 Professional IT Training
+              </span>
+
+              <span className="hidden md:block text-slate-600">|</span>
+
+              <span className="flex items-center gap-2">
+                👨‍🏫 Industry-Expert Instructors
+              </span>
+
+              <span className="hidden md:block text-slate-600">|</span>
+
+              <span className="flex items-center gap-2">
+                🎓 Joined Over 500+ Students
+              </span>
+
+            </div>
           </div>
         </div>
-
       </div>
 
       <div>
