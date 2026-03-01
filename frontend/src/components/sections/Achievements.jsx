@@ -45,28 +45,35 @@ const AnimatedNumber = ({ value, duration = 2000 }) => {
 };
 
 /* ------------------ Stat Card (memoized to prevent re-renders) ------------------ */
+
 const StatCard = memo(({ icon: Icon, label, value, suffix = "+" }) => {
   return (
-    <div className="relative group rounded-2xl overflow-hidden p-[1px] transform-gpu">
+    <div className="relative group rounded-2xl p-[1px] transform-gpu">
 
-      {/* Hover Border Animation (removed infinite spin) */}
-      <div className="absolute inset-[-100%] bg-[conic-gradient(from_90deg_at_50%_50%,#0000_0%,#0000_85%,#3b82f6_100%)] opacity-0 group-hover:opacity-100 group-hover:animate-spin transition-all duration-500" />
+      {/* Card Content Container */}
+      <div className="relative overflow-hidden bg-zinc-900/70 backdrop-blur-md border border-zinc-800 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-zinc-900/80 transition-all duration-300">
 
-      {/* Card Content (lighter blur for performance) */}
-      <div className="relative bg-zinc-900/70 backdrop-blur-md border border-zinc-800 rounded-2xl p-8 flex flex-col items-center text-center hover:bg-zinc-900/80 transition-all duration-300">
-
-        <div className="mb-4 p-3 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 group-hover:scale-105 transition-transform duration-300">
-          <Icon size={28} />
+        {/* --- NEW: Glow/Blink Animation --- */}
+        {/* This div creates the diagonal light beam that sweeps left to right */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-y-0 -left-[150%] w-[150%] bg-gradient-to-r from-transparent via-blue-400/20 to-transparent skew-x-[-30deg] group-hover:left-[150%] transition-all duration-1000 ease-in-out" />
         </div>
 
-        <h3 className="text-4xl font-bold text-white mb-2 tracking-tight">
-          <AnimatedNumber value={value} />
-          <span className="text-blue-500">{suffix}</span>
-        </h3>
+        {/* Inner Content (wrapped in relative z-10 to stay above the shine) */}
+        <div className="relative z-10 flex flex-col items-center">
+          <div className="mb-4 p-3 rounded-xl bg-blue-600/10 border border-blue-500/20 text-blue-400 group-hover:scale-105 transition-transform duration-300">
+            <Icon size={28} />
+          </div>
 
-        <p className="text-zinc-400 font-light text-sm tracking-widest uppercase">
-          {label}
-        </p>
+          <h3 className="text-4xl font-bold text-white mb-2 tracking-tight">
+            <AnimatedNumber value={value} />
+            <span className="text-blue-500">{suffix}</span>
+          </h3>
+
+          <p className="text-zinc-400 font-light text-sm tracking-widest uppercase">
+            {label}
+          </p>
+        </div>
 
         {/* Subtle bottom glow */}
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-[1px] bg-gradient-to-r from-transparent via-blue-500 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-200" />
@@ -74,6 +81,8 @@ const StatCard = memo(({ icon: Icon, label, value, suffix = "+" }) => {
     </div>
   );
 });
+
+
 
 /* ------------------ Main Component ------------------ */
 export default function Achievements() {

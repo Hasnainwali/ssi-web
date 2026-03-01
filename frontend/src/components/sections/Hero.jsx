@@ -55,7 +55,6 @@ const Hero = ({ toggleEnrollModal }) => {
       <RoomGridFloor />
 
 
-
       <div className='hero-grid-container'>
 
         <div ref={heroTitle} className='hero-main grid justify-center items-center'>
@@ -94,13 +93,14 @@ const Hero = ({ toggleEnrollModal }) => {
       text-center 
       text-slate-300 
       rounded-2xl 
-      bg-white/5 
+      bg-slate-800/60 
       backdrop-blur-xl 
       border border-white/10 
       shadow-[0_0_40px_rgba(0,255,200,0.05)]
       transition-all duration-500
       hover:-translate-y-2 
-      hover:shadow-[0_0_60px_rgba(0,255,200,0.15)]
+      hover:shadow-blue-600/20
+      slide-up
     ">
 
             {/* Subtle Gradient Glow on Hover */}
