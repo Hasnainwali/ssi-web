@@ -78,8 +78,8 @@ const CoursesPage = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 relative perspective-[1000px]">
           {filteredCourses.map((course) => (
-            <div key={course.id} className="bg-[#1E293B]/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-xl shadow-blue-900/20 transition-all slide-left
-            hover:scale-110 cursor-pointer hover:-rotate-y-45"
+            <div key={course.id} className="bg-[#1E293B]/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 shadow-xl shadow-blue-900/20 transition-transform duration-300 ease-in-out
+            hover:scale-105 hover:-translate-y-6 cursor-pointer hover:rotate-y-12 hover:rotate-x-30"
               onClick={() => navigate(`/course/${course.id}`)}>
               <div className="flex justify-between items-start mb-6">
                 <img className="bg-slate-800 p-3 rounded-lg border border-slate-700 group-hover:border-blue-500/50 transition-colors size-28 object-cover"

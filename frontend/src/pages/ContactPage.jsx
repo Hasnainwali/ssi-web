@@ -4,6 +4,7 @@ import {
     ArrowRight, Facebook, Linkedin, Youtube, Instagram,
     Send, MessageSquare, Globe, CheckCircle, Clock, Map
 } from 'lucide-react';
+import { socialLinks } from '../All data/socialLinks.js'
 
 
 
@@ -119,9 +120,9 @@ const ContactPage = () => {
                             <div className="pt-6">
                                 <p className="text-slate-400 text-sm font-medium uppercase tracking-widest mb-4">Follow Us</p>
                                 <div className="flex space-x-4">
-                                    {[Facebook, Linkedin, Instagram, Youtube].map((Icon, i) => (
-                                        <a key={i} href="#" className="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center text-slate-400 hover:bg-blue-600 hover:text-white transition-all hover:scale-110">
-                                            <Icon className="w-5 h-5" />
+                                    {socialLinks.map((link, i) => (
+                                        <a key={i} href={link.href} className={link.colorClass}>
+                                            <link.Icon className="w-5 h-5" />
                                         </a>
                                     ))}
                                 </div>

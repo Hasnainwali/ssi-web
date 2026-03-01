@@ -1,5 +1,5 @@
 import react, { useState, useEffect, useRef } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { href, useNavigate } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
 import useReveal from '../../hooks/useReveal.js'
 import FloatingCard from '../common/FloatingCard.jsx';
@@ -87,11 +87,13 @@ const Hero = ({ toggleEnrollModal }) => {
               onClick={() => navigate('/courses')}
               className="hero-cta-1"
             >
-              Explore Courses <ArrowRight className=" bg-blue-500 p-2 text-black rounded-lg ml-2 w-8 h-8" />
+              Explore Courses <ArrowRight className=" bg-blue-500 p-1 text-black rounded-lg ml-2 w-8 h-8 hover:translate-x-1 transition-transform duration-200 ease-in" />
             </button>
 
             <button className="hero-cta-2 slide-up">
-              <Play className="mr-2 w-5 h-5" /> Watch Video
+              <a href="https://www.youtube.com/@SSIB_OFFICIAL">
+                <Play className="mr-2 w-5 h-5 hover:rotate-360 transition-transform duration-200 ease-in" /></a>
+              Watch Video
             </button>
           </div>
         </div>

@@ -131,11 +131,11 @@
     }
 
     .hero-cta-1 {
-        @apply bg-white/70 text-black px-2 py-1 rounded-xl text-lg shadow-lg shadow-blue-700/30 hover:scale-105 transition-all duration-300 flex items-center cursor-pointer;
+        @apply bg-white text-black px-2 py-1 rounded-xl font-medium shadow-lg shadow-blue-700/30 hover:scale-105 transition-all duration-300 flex items-center cursor-pointer;
     }
 
     .hero-cta-2 {
-        @apply bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white px-4 py-2 rounded-xl text-lg transition-all duration-300 flex items-center;
+        @apply bg-transparent border border-slate-600 text-slate-300 hover:text-white hover:border-white px-4 py-2 rounded-xl font-medium transition-all duration-300 flex items-center;
     }
 
 

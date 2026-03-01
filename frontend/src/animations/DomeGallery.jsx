@@ -835,7 +835,7 @@ export default function DomeGallery({
                                     >
                                         <img
                                             src={it.src}
-                                            draggable={false}
+                                            draggable={true}
                                             alt={it.alt}
                                             className="w-full h-full object-cover pointer-events-none hover:scale-105 transition-all duration-200"
                                             style={{
