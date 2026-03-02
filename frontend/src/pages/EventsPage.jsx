@@ -26,9 +26,14 @@ const EventsPage = () => {
 
 
   const fetchEvents = async () => {
-    const res = await api.get('/api/getevents');
-    console.log(res.data);
-    setEvents(res.data.AllEvents);
+    try {
+      const res = await api.get('/api/getevents');
+      console.log(res.data);
+      setEvents(res.data.AllEvents);
+    }
+    catch (error) {
+      console.log(error.message)
+    }
   }
 
   useEffect(() => {
@@ -72,16 +77,18 @@ const EventsPage = () => {
             <div key={event.id} className="bg-[#1E293B]/50 backdrop-blur-sm border border-slate-700 rounded-2xl p-6 hover:shadow-2xl hover:shadow-blue-900/20 transition-all hover:-translate-y-2 group">
 
 
-              <img src={event.img} alt="event-img"
+              <img src={event.images} alt="event-img"
                 className='w-full h-auto bg-cover size-cover rounded-md' />
 
 
-              <h3 className="text-xl font-bold text-white mb-2">{event.title}</h3>
+              <h3 className="text-xl font-bold text-white my-2">{event.title}</h3>
               <p className="text-slate-400 text-sm mb-4 line-clamp-2">{event.tag}</p>
+              <p className="text-slate-400 text-sm mb-4 line-clamp-2">{event.desc}</p>
 
 
               <div className="grid grid-cols-2 gap-4 mb-6 text-sm text-slate-400">
-                {/* <div className="flex items-center"><Clock className="w-4 h-4 mr-2" /> {event.day}<div> */}
+                <div className="flex items-center"><Clock className="w-4 h-4 mr-2" /> {event.date}
+                </div>
               </div>
 
 
