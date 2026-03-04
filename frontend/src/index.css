@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+
 
 /* ================= BASE ================= */
 @layer base {
@@ -7,7 +9,7 @@
     }
 
     body {
-        background-color: #050505;
+        background-color: #050816;
         color: #ffffff;
         overflow-x: hidden;
         overscroll-behavior: none;

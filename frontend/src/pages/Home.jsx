@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { FaPhone, FaWhatsapp, FaEnvelope } from 'react-icons/fa'
 
 import Hero from '../components/sections/Hero'
+import Hero2 from '../components/sections/Hero2.jsx'
 import Achievements from '../components/sections/Achievements'
 import Courses from '../components/sections/Courses'
 import Results from '../components/sections/Results'
@@ -10,7 +11,7 @@ import Team from '../components/sections/Team'
 import About from '../components/sections/About'
 import CallToAction from '../components/sections/CallToAction'
 import { EnrollmentModal } from '../components/common/EnrollmentModel';
-import {RainBackground} from '../animations/BgAnimations';
+import { RainBackground } from '../animations/BgAnimations';
 
 
 
@@ -39,7 +40,7 @@ const Home = ({ toggleEnrollModal }) => {
                 </div>
 
 
-                <Hero />
+                <Hero2 />
                 {/* <hr className='text-white' /> */}
 
                 <About />

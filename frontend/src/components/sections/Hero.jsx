@@ -1,5 +1,5 @@
 import react, { useState, useEffect, useRef } from 'react'
-import { href, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ArrowRight, Play } from 'lucide-react';
 import useReveal from '../../hooks/useReveal.js'
 import FloatingCard from '../common/FloatingCard.jsx';
